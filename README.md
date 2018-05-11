@@ -1,8 +1,7 @@
 # pubmed_word2vec
 This is my master's degree thesis project in Computer System Engineering
 
-The goal of this project is to apply the skipgram model to the PubMed collection.
-There are 2 Python programs:
+The goal of this project is to apply the skipgram model proposed by Mikolov et al to the PubMed collection. There are 2 Python programs:
   * parsing_xml.py : takes the PubMed .xml files in input and makes the parsing to extract ID, Title and Abstract (if present). A text file is generated for each article. The file's name is the corresponding Article ID
                     
     **usage**: python parsing_xml.py input_folder output_folder

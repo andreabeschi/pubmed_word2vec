@@ -6,11 +6,15 @@ The goal of this project is to apply the skipgram model proposed by Mikolov et a
                     
     **usage**: python parsing_xml.py input_folder output_folder
                     
-  * build_data.py : takes the text files in input, extract the single words, removes thoose words that appear less than min_freq times and in the end generates the dictionaries:
+  * build_temp.py : takes the text files in input_folder, extract the single words and generates for each PubMed folder a Counter object that counts words occurences. Then save the Counter objects in .pickle files in output_folder
+
+    **usage**: python build_temp.py input_folder output_folder
+
+  * build_dict.py : takes the temp .pickle files in input_folder, extracts the Counter objects and sum all the Counter in one single Counter with words occurences for all the PubMed collection. The emoves thoose words that appear less than min_freq times and in the end generates the dictionaries and saves them in output_folder:
     * words_to_int: maps words in integers
     * int_to_words: maps integers in words
     * words_count: maps words in theyr occurrence numbers
 
-    **usage**: python build_date input_folder output_folder min_freq
+    **usage**: python build_dict input_folder output_folder min_freq
     
   * skipgram_training.py : loads the dictionaries previously saved from the dictionaries_folder, generates and trains the skipgram model using the TensorFlow framework. The training batches are generated from the text files with Titles and Asbtracts

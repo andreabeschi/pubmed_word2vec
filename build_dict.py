@@ -1,3 +1,14 @@
+"""
+Programma che riceve in input la cartella dove sono contenuti i file .pickle generati da 
+build_temp.py
+Vengono caricati in memoria tutti i Counter relativi alle cartelle di Pubmed, vengono sommati in un
+unico oggetto Counter (che viene salvato). Vengono in seguito eliminate le parole poco frequenti, 
+cioè che appaiono nella collezione un numero di volte inferiore a min_freq. In seguito le parole 
+vengono ordinate per frequenza in modo decresente e vengono infine generati e salvati i dizionari:
+    -words_to_int: mappa le parole in interi
+    -int_to_words: mappa gli interi nelle parole
+    -words_count: mappa le parole nella loro frequenza
+"""
 import pickle
 import os
 import sys

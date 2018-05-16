@@ -8,6 +8,8 @@ vengono ordinate per frequenza in modo decresente e vengono infine generati e sa
     -words_to_int: mappa le parole in interi
     -int_to_words: mappa gli interi nelle parole
     -words_count: mappa le parole nella loro frequenza
+    
+utilizzo: python build_dict cartella_input cartella_output min_freq
 """
 import pickle
 import os

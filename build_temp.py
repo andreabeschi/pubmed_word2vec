@@ -2,7 +2,8 @@
 Programma che effettua la scansione delle cartelle con i dati Pubmed estratti dai file .xml
 Per ogni cartella viene estratto un oggetto Counter con il numero di occorrenze di ciascuna 
 parola e viene salvato in un file .pickle, per essere successivamente utilizzato per creare
-i dizionari completi relativi all'intera collezione
+i dizionari completi relativi all'intera collezione.
+utilizzo: python build_temp cartella_input cartella_output
 """
 
 

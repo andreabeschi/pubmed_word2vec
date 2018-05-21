@@ -33,6 +33,7 @@ for cartella in lista_cartelle:
         temp_words.clear()
     lista_file.clear()
     words_count = collections.Counter(words)
+    words.clear()
     with open(cartella_output + cartella + '.pickle', 'wb') as f:
         pickle.dump(words_count, f)
     words_count.clear()

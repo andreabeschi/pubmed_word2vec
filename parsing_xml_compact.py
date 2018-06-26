@@ -1,3 +1,13 @@
+"""
+Programma che effettua il parsing dei file .xml della collezione di Pubmed.
+Viene processato ogni file .xml all'interno della cartella indicata nella variabile cartella
+Per il parsing viene utilizzata la libreria ElementTree del pacchetto xml di Python che
+permette di caricare l'albero corrispondente al file .xml on the fly evitando di occupare tutta la memoria disponibile solo per caricare il file
+Utilizzo: python parsing_xml.py folder1 folder2
+folder1=cartella dove sono collocati i file .xml
+folder2=cartella dove salvare i risultati
+"""
+
 import xml.etree.ElementTree as ET
 
 import os
@@ -53,18 +63,16 @@ for doc in lista_file:
                     article_title = article.find('ArticleTitle')
                     if article_title != None:
                         if article_title.text != None:
-                            f.write(process(article_title.text, punteggiatura))
+                            f.write(process(article_title.text, punteggiatura) + '\n')
                             abstract = article.find('Abstract')
                             if abstract != None:
                                 testo_abstract=''
                                 for paragrafi in abstract.iter('AbstractText'):
                                     if paragrafi.text != None:
                                         testo_abstract = testo_abstract + paragrafi.get('Label','') + ' ' + paragrafi.text + ' '                    
-                                f.write('\n'+process(testo_abstract, punteggiatura)+' endarticle\n')
+                                f.write(process(testo_abstract, punteggiatura)+'\n')
                                 testo_abstract=''
                                 abstract.clear()
-                            else:
-                                f.write(' endarticle\n')
                             j+=1
                         article_title.clear()
                     article.clear()

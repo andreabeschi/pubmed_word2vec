@@ -18,6 +18,8 @@ The goal of this project is to apply the skipgram model proposed by Mikolov et a
     **usage**: python build_dict input_folder output_folder min_freq
     
   * skipgram_training.py : loads the dictionaries previously saved from the dictionaries_folder, generates and trains the skipgram model using the TensorFlow framework. The training batches are generated from the text files with Titles and Asbtracts
+  
+  * evaluation.py : loads the trained model and embeddings from log directory and performs intrinsic evaluation of the embeddings. In the evaluation we use three dataset: [UMNSRS-Sim](http://rxinformatics.umn.edu/SemanticRelatednessResources.html), [UMNSRS-Rel](http://rxinformatics.umn.edu/SemanticRelatednessResources.html) and [WordSim353](http://www.cs.technion.ac.il/~gabr/resources/data/wordsim353/)
 
 
 The _compact versions extract the title/abstract information from the pubmed .xml files in one big text file. This version is faster in preprocessing and in training.
